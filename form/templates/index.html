@@ -1,12 +1,28 @@
 {% extends "layout.html" %}
 
-{% block heading %}
-Welcome
-{% endblock %}
-
 {% block body %}
+<!--
 <form action="{{ url_for('login') }}" method="post">
+
 	<input type="text" name="nombre" placeholder="Enter Your Name">
 	<button>Submit</button>
-</form>
+</form>-->
+<section class="form-register">
+	<form action="{{ url_for('login') }}" method="post">
+		<h4>Formulario de Registro</h4>
+		<input class="controls" type="text" name="pais" id="pais" placeholder="Ingrese su País de residencia">
+		<input class="controls" type="text" name="nombres" id="nombres" placeholder="Ingrese sus Nombres">
+		<input class="controls" type="text" name="apellidos" id="apellidos" placeholder="Ingrese sus Apellidos">
+		<input class="controls" type="text" name="direccion" id="direccion" placeholder="Ingrese sus Dirección">
+		<input class="controls" type="text" name="ciudad" id="ciudad" placeholder="Ingrese su Ciudad">
+		<input class="controls" type="text" name="provincia" id="provincia" placeholder="Ingrese su Provincia">
+		<input class="controls" type="text" name="codigo_postal" id="codigo_postal" placeholder="Ingrese su Código Postal">
+		<input class="controls" type="text" name="telefono" id="telefono" placeholder="Ingrese su Número de Teléfono">
+		<input class="controls" type="text" name="email" id="email" placeholder="Ingrese su Correo">
+		<input class="controls" type="password" name="password" id="password" placeholder="Ingrese su Contraseña">
+		<p>Estoy de acuerdo con los <a href="#">Términos y condiciones</a></p>
+		<button class="botons">Registrarse</a></button>
+		<p><a href="#">¿Ya tengo Cuenta?</a></p>
+	</form>
+</section>
 {% endblock %}

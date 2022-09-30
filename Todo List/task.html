@@ -1,0 +1,88 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>DBP</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+  <script>
+    function delall(){
+      ol= document.querySelector('#tasks');
+      while(ol.firstChild){
+        ol.removeChild(ol.lastChild);
+      }
+    }
+
+    function deletetask(button){
+      li= button.parentElement;
+      li.remove();
+    }
+
+    function completeall(){
+      cb= document.getElementsByName('chk');
+      for(var i=0; i<cb.length; i++){  
+        if(cb[i].type=='checkbox')
+          if(cb[i].checked==false){
+            cb[i].checked=true; 
+            tachar(cb[i]);
+          }  
+      }  
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      document.querySelector('#delete-all').onclick = 
+      function() {delall();};
+      document.querySelector('#complete-all').onclick = 
+        function() {completeall();};
+    });
+
+    document.addEventListener('DOMContentLoaded', () => {
+      document.querySelector('#new-task').onsubmit = () => {
+        const cb = document.createElement("INPUT");
+        cb.setAttribute("type", "checkbox");
+        cb.setAttribute("name", "chk");
+        cb.onclick = function() {tachar(cb);};
+        const button= document.createElement("button");
+        button.innerHTML = "x";
+        button.onclick = function() {deletetask(button);};
+        const li = document.createElement('li');
+        li.appendChild(cb);
+        li.append(document.querySelector('#task').value);
+        li.appendChild(button);
+        document.querySelector('#tasks').append(li);
+        document.querySelector('#task').value = '';
+        return false;
+      };
+    });
+    function tachar(cb){
+      if(cb.checked){
+        const del = document.createElement("del");
+        cb_text = cb.nextSibling;
+        del.appendChild(cb_text);
+        cb.after(del);
+      }
+      else{
+        del = cb.nextSibling;
+        texto= del.firstChild;
+        del.remove();
+        cb.after(texto);
+      }
+    }
+  </script>
+
+  </head>
+  <body>
+    <p>Computer Science</p>
+    <h1>Tasks</h1>
+    <form id="new-task">
+      <input id="task" autocomplete="off" autofocus placeholder="New Task"
+      type="text">
+      <input type="submit" value="Add Todo">
+    </form>
+    <div>
+      <button id="complete-all">Complete All</button>
+      <button id="delete-all">Delete All</button>
+    </div>
+    <ol id="tasks">
+    </ol>
+  </body>
+</html>

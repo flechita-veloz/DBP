@@ -1,0 +1,172 @@
+<html>
+
+<head>
+  <title>Mi Primera Página</title>
+  <meta charset=”utf-8” />
+  <link rel="stylesheet" href={{url_for('static', filename='styles_index.css' )}}>
+  <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"> 
+  <script src="{{url_for('static', filename='index.js')}}"></script>
+  <script src="https://kit.fontawesome.com/34498d2f14.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <main>
+    <h1>Formulario</h1>
+    <form action="{{url_for('create_cv')}}" method="post" id="form" class= "form">
+      <div class= "form_group" id= "group_name">
+        <label for="name" class="form_label">Nombres:</label>
+        <div class="form_group_input">
+          <input class="form_input" type="text" name="name" id="name" placeholder="Abimael Eduardo">
+          <i class="form_validation-state fa-solid fa-circle-xmark"></i>
+        </div>
+        <p class="form_input-wrong">Los nombres solo puede contener letras mayúsculas y minúsculas.</p>
+      </div>
+
+      <div class= "form_group" id= "group_last-name">
+        <label for="last-name" class="form_label">Apellidos:</label>
+        <div class="form_group_input">
+          <input class="form_input" type="text" name="last-name" id="last-name" placeholder="Ruiz Trelles">
+          <i class="form_validation-state fa-solid fa-circle-xmark"></i>
+        </div>
+        <p class="form_input-wrong">Los apellidos solo puede contener letras mayúsculas y minúsculas.</p>
+      </div>
+
+      <div class= "form_group" id= "group_date-birth">
+        <label for="date-birth" class="form_label">Fecha de Nacimiento:</label>
+        <div class="form_group_input">
+          <input class="form_input" type="date" name="date-birth" id="date-birth">
+          <i class="form_validation-state fa-solid fa-circle-xmark"></i>
+        </div>
+        <p class="form_input-wrong">Por favor introduzca una fecha válida.</p>
+      </div>
+
+      <div class= "form_group" id= "group_ocupation">
+        <label for="ocupation" class="form_label">Ocupacion:</label>
+        <div class="form_group_input">
+          <input class="form_input" type="text" name="ocupation" id="ocupation" placeholder="Ingeniero de Software">
+          <i class="form_validation-state fa-solid fa-circle-xmark"></i>
+        </div>
+        <p class="form_input-wrong">La ocupación solo puede contener letras mayúsculas y minúsculas.</p>
+      </div>
+
+      <div class= "form_group" id= "group_phone">
+        <label for="phone" class="form_label">Teléfono:</label>
+        <div class="form_group_input">
+          <input class="form_input" type="text" name="phone" id="phone" placeholder="978321873">
+          <i class="form_validation-state fa-solid fa-circle-xmark"></i>
+        </div>
+        <p class="form_input-wrong">El teléfono solo puede contener números, con mínimo de 7 y máximo de 14 dígitos.</p>
+      </div>
+
+      <div class= "form_group" id= "group_email">
+        <label for="email" class="form_label">Email:</label>
+        <div class="form_group_input">
+          <input class="form_input" type="email" name="email" id="email" placeholder="correo@correo.com">
+          <i class="form_validation-state fa-solid fa-circle-xmark"></i>
+        </div>
+        <p class="form_input-wrong">El correo solo puede contener letras, numeros, puntos, guiones y guion bajo.</p>
+      </div>
+
+      <!-- Nacionalidad--------------------------------------------------------->
+      <div class= "form_group" id= "group_nationality">
+        <label for="nationality" class="form_label">Nacionalidad:</label>
+        <div class="form_group_input">
+          <select name="nationality" id="nationality" class="form_input">
+            <option value="Peru">Peru</option>
+            <option value="Argentina">Argentina</option>
+            <option value="Brazil">Brazil</option>
+            <option value="Chile">Chile</option>
+            <option value="Colombia">Colombia</option>
+            <option value="Ecuador">Ecuador</option>
+            <option value="Bolivia">Bolivia</option>
+          </select>
+          <i class="form_validation-state fa-solid fa-circle-xmark"></i>
+        </div>
+        <p class="form_input-wrong">Por favor complete este espacio.</p>
+      </div>
+      
+       <!-- Lenguajes----------------------------------------------------------->
+      <div class="form_group" id= "group_languges">
+        <div class="form_group_label">
+          <label class="form_label">Idiomas</label>
+          <button type= "button" id="btn-add-language">añadir idioma</button>
+        </div>
+        <ol id= "list-languages">
+        </ol>
+      </div>
+
+      <!-- Lenguajes de Programacion---------------------------------------------->
+      <div class= "form_group" id= "group-programming-lenguages">
+        <label class="form_label">Lenguajes de Programación:</label>
+        <div>
+          <select name="programming-lenguages" class="form_input" multiple>
+            <option value="C/C++">C/C++</option>
+            <option value="JavaScript">JavaScript</option>
+            <option value="Java">Java</option>
+            <option value="C#">C#</option>
+            <option value="Python">Python</option>
+            <option value="PHP">PHP</option>
+            <option value="R">R</option>
+          </select>
+          <i class="form_validation-state fa-solid fa-circle-xmark"></i>
+        </div>
+        <p class="form_input-wrong">Por favor complete este espacio.</p>
+      </div>
+
+      <!-- Aptitudes---------------------------------------------->
+      <div class= "form_group" id= "group_aptitudes">
+        <label class="form_label">Aptitudes:</label>
+        <div>
+          <input class="form_input" list="aptitudes" name="aptitudes">
+          <datalist id="aptitudes">
+            <option value="Inteligencia emocional">
+            <option value="Espiritu critico">
+            <option value="Trabajo en equipo">
+            <option value="Capacidad analitica">
+            <option value="Habilidades fisicas">
+          </datalist>
+          <i class="form_validation-state fa-solid fa-circle-xmark"></i>
+        </div>
+        <p class="form_input-wrong">Por favor complete este espacio.</p>
+      </div>
+      
+      <!-- Habilidades---------------------------------------------->
+      <div class= "form_group" id= "group_skills">
+        <label class="form_label">Habilidades:</label><br>
+        <div>
+          <input type="checkbox" name="skill1" value="Ciberseguridad">
+          <label>Ciberseguridad</label><br>
+          <input type="checkbox" name="skill2" value="Diseño de bases de datos">
+          <label>Diseño de bases de datos</label><br>
+          <input type="checkbox" name="skill3" value="Debugging">
+          <label>Debugging</label><br>
+          <input type="checkbox" name="skill4" value="Programación back-end">
+          <label>Programación back-end</label>
+          <i class="form_validation-state fa-solid fa-circle-xmark"></i>
+        </div>
+        <p class="form_input-wrong">Por favor complete este espacio.</p>
+      </div>
+
+      <div class= "form_group" id= "group_profile">
+        <label for="profile" class="form_label">Perfil:</label>
+        <div class="form_group_input">
+          <textarea class="form_input" name="profile" id="profile">Trabajador Social con 4 años de experiencia en proyectos colectivos. Mi objetivo es lograr que los jóvenes obtengan acceso a la educación superior mediante logros deportivos.
+          </textarea>
+          <i class="form_validation-state fa-solid fa-circle-xmark"></i>
+        </div>
+        <p class="form_input-wrong">El perfil es de minimo 50 caracteres y solo puede contener letras, números y signos de puntuación.</p>
+      </div>
+
+      <div class="form_message" id="form_message">
+        <p><i class="fa-solid fa-triangle-exclamation"></i> <b>Error: </b> Por favor rellene el formulario correctamente.</p>
+      </div>
+
+      <div class= "form_group form_group_btn-submit">
+        <button type="submit" class="form_btn" id="submit">Enviar</button>
+      </div>
+    </form>
+  </main>
+</body>
+
+</html>

@@ -1,0 +1,289 @@
+*{
+	box-sizing: border-box;
+}
+
+body{
+	font-family: 'Roboto', sans-serif;
+	background: #E5E5E5;
+}
+
+main{
+	max-width: 900px;
+	width: 90%;
+	margin: auto;
+	padding: 40px;
+}
+
+.form{
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 20px;
+}
+
+#group_work-experience,
+#group_profile,
+#group_formation{
+	grid-column: span 2;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+}
+
+.sub_form_group{
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 20px;
+}
+
+.sub_form_group_period_inputs{
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 20px;
+}
+
+.sub_form_label,
+.form_label{
+	display: block;
+	font-weight: 700;
+	padding: 10px;
+	cursor: pointer;
+}
+
+.sub_form_input,
+.form_group_input{
+	position: relative;
+	margin-bottom: 10px;
+}
+
+.sub_form_label,
+.form_group_label{
+	position: relative;
+}
+
+.sub_form_input,
+.form_input{
+	width: 100%;
+	background: #fff;
+	border: 3px solid transparente;
+	border-radius: 3px;
+	height: 45px;
+	line-height: 45px;
+	padding: 0 40px 0 10px;
+	transition: .3s ease all;
+}
+
+.sub_form_group{
+	width: 820px;
+}
+
+#profile{
+	width: 820px;
+	height: 200;
+	line-height: 20px;
+}
+
+#programming-languages{
+	height: 150px;
+}
+
+.sub_form_input:focus,
+.form_input:focus{
+	border: 3px solid #0075FF;
+	outline: none;
+	box-shadow: 3px 0px 30px rgba(163,163,163, 0.4);
+}
+
+.form_input-wrong{
+	font-size: 12px;
+	margin-bottom: 0;
+	display: none;
+}
+
+.form_input-wrong-activate{
+	display: block;
+}
+
+.form_validation-state{
+	position: absolute;
+	right: 10px;
+	bottom: 15px;
+	z-index: 100;
+	font-size: 16px;
+	opacity: 0; /*para que no se muestre el btn de error*/
+}
+
+#btn-add-formation,
+#btn-insert-skill,
+#btn-undo-skill,
+#btn-add-skill,
+#btn-delete-skill,
+#btn-add-aptitude,
+#btn-delete-aptitude,
+#btn-delete-language,
+#btn-add-language{
+	position: absolute;
+	top: 10px;
+	left: 110px;
+	color: #fff;
+	display: inline-block;
+	font-weight: bold;
+	border: none;
+	border-radius: 3px;
+	cursor: pointer;
+	font-size: 13px;
+	transition: .1s ease all;
+}
+
+#btn-add-formation{
+	margin-top: 10px;
+	position: unset;
+}
+
+
+#btn-insert-skill{
+	left: 90px;
+}
+#btn-undo-skill{
+	left: 160px;
+}
+
+#btn-add-formation,
+#btn-insert-skill,
+#btn-add-skill,
+#btn-add-aptitude,
+#btn-add-language{
+	background: #33CD5F;
+}
+
+#btn-undo-skill,
+#btn-delete-skill,
+#btn-delete-aptitude,
+#btn-delete-language{
+	background: #ef473a;
+}
+
+#btn-add-formation:hover,
+#btn-insert-skill:hover,
+#btn-undo-skill:hover,
+#btn-add-skill:hover,
+#btn-delete-skill:hover,
+#btn-add-aptitude:hover,
+#btn-delete-aptitude:hover
+#btn-add-language:hover,
+#btn-delete-language:hover{
+	box-shadow: 3px 0px 30px rgba(163,163,163,1);
+}
+
+input[type="radio"]{
+	margin-right: 5px;
+	margin-left: 5px;
+}
+
+.form_group_btn,
+.form_message,
+.form_group_btn-submit{
+	grid-column: span 2;/*ocupa dos columnas*/
+}
+
+.form_message{
+	height: 45px;
+	line-height: 45px;
+	background: #F66060;
+	padding: 0 15px;
+	border-radius: 3px;
+	display: none;
+}
+
+.form_message-activate{
+	display: block;
+}
+
+.form_message p{
+	margin: 0;
+}
+
+.form_group_btn,
+.form_group_btn-submit{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.form_btn-add{
+	height: 25px;
+	line-height: 25px;
+	width: 60%;
+	color: #fff;
+	font-weight: bold;
+	border: none;
+	border-radius: 3px;
+	cursor: pointer;
+	transition: .1s ease all;
+}
+
+.form_btn{
+	height: 45px;
+	line-height: 45px;
+	width: 30%;
+	background: #000;
+	color: #fff;
+	font-weight: bold;
+	border: none;
+	border-radius: 3px;
+	cursor: pointer;
+	transition: .1s ease all;
+}
+
+.form_btn:hover{
+	box-shadow: 3px 0px 30px rgba(163,163,163,1);
+}
+
+/*--- Estilos de validacion--- */
+.form_group_right .form_validation-state{/*cuando este correcto*/
+	color: #1ed12d;
+	opacity: 1;
+	z-index: 100;
+}
+
+
+.form_group_wrong .form_label{
+	color: #bb2929;
+}
+
+.form_group_wrong .form_validation-state{
+	color: #bb2929;
+	opacity: 1;
+}
+
+
+.form_group_wrong .form_input{
+	border: 3px solid #bb2929;
+}
+
+ol{
+	margin-top: -10px;
+}
+li::marker{
+    font-weight: bold;
+}
+
+
+/*--- Mediaqueris--- */
+@media screen and (max-width: 950px){
+	.form{
+		grid-template-columns: 1fr;
+	}
+	.form_message,
+	.form_group_btn-submit{
+		grid-column: 1;
+	}
+	.form_btn{
+		width: 100%;
+	}
+}
+
+textarea{
+	width: 300px;
+	height: 100px;
+}

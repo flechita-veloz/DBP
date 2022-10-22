@@ -33,7 +33,7 @@ main{
 .sub_form_group{
 	display: grid;
 	grid-template-columns: 1fr 1fr;
-	gap: 20px;
+	column-gap: 20px;
 }
 
 .sub_form_group_period_inputs{
@@ -53,14 +53,20 @@ main{
 .sub_form_input,
 .form_group_input{
 	position: relative;
+}
+
+#input-skill{
 	margin-bottom: 10px;
 }
 
+
 .sub_form_label,
+.sub_form_label_head,
 .form_group_label{
 	position: relative;
 }
 
+.form_input_content,
 .sub_form_input,
 .form_input{
 	width: 100%;
@@ -77,10 +83,14 @@ main{
 	width: 820px;
 }
 
-#profile{
+.form_input_content{
 	width: 820px;
 	height: 200;
 	line-height: 20px;
+}
+
+.sub_form_group_content{
+	grid-column: span 2;
 }
 
 #programming-languages{
@@ -113,7 +123,10 @@ main{
 	opacity: 0; /*para que no se muestre el btn de error*/
 }
 
+#btn-add-work-experience,
+#btn-delete-work-experience,
 #btn-add-formation,
+#btn-delete-formation,
 #btn-insert-skill,
 #btn-undo-skill,
 #btn-add-skill,
@@ -135,8 +148,13 @@ main{
 	transition: .1s ease all;
 }
 
+#btn-delete-work-experience{
+	left: 160px;
+}
+
+#btn-add-work-experience,
 #btn-add-formation{
-	margin-top: 10px;
+	margin-top: 20px;
 	position: unset;
 }
 
@@ -148,6 +166,7 @@ main{
 	left: 160px;
 }
 
+#btn-add-work-experience,
 #btn-add-formation,
 #btn-insert-skill,
 #btn-add-skill,
@@ -156,6 +175,9 @@ main{
 	background: #33CD5F;
 }
 
+#btn-delete-work-experience,
+#btn-delete-skill,
+#btn-delete-formation,
 #btn-undo-skill,
 #btn-delete-skill,
 #btn-delete-aptitude,
@@ -163,13 +185,17 @@ main{
 	background: #ef473a;
 }
 
+#btn-add-work-experience:hover,
+#btn-delete-work-experience:hover,
+#btn-delete-skill:hover,
 #btn-add-formation:hover,
+#btn-delete-formation:hover,
 #btn-insert-skill:hover,
 #btn-undo-skill:hover,
 #btn-add-skill:hover,
 #btn-delete-skill:hover,
 #btn-add-aptitude:hover,
-#btn-delete-aptitude:hover
+#btn-delete-aptitude:hover,
 #btn-add-language:hover,
 #btn-delete-language:hover{
 	box-shadow: 3px 0px 30px rgba(163,163,163,1);
@@ -180,6 +206,7 @@ input[type="radio"]{
 	margin-left: 5px;
 }
 
+.sub_form_label_head,
 .form_group_btn,
 .form_message,
 .form_group_btn-submit{

@@ -147,50 +147,32 @@
       <div class= "form_group" id= "group_profile">
         <label for="profile" class="form_label">Perfil</label>
         <div class="form_group_input">
-          <textarea class="form_input" name="profile" id="profile">Trabajador Social con 4 años de experiencia en proyectos colectivos. Mi objetivo es lograr que los jóvenes obtengan acceso a la educación superior mediante logros deportivos.
+          <textarea class="form_input_content" name="content-profile" id="content-profile">Trabajador Social con 4 años de experiencia en proyectos colectivos. Mi objetivo es lograr que los jóvenes obtengan acceso a la educación superior mediante logros deportivos.
           </textarea>
           <i class="form_validation-state fa-solid fa-circle-xmark"></i>
         </div>
         <p class="form_input-wrong">El perfil es de minimo 50 caracteres y solo puede contener letras, números y signos de puntuación.</p>
       </div>
 
+      <!--Experiencia laboral---------------------------------------------------------->
+      <div class= "form_group" id= "group_work-experience">
+        <div class="form_group_label" id= "group_formation_label">
+          <label class="form_label">Experiencia Laboral</label>
+        </div>
+        <ol id= "work-experiences">
+        </ol>
+        <div class="form_group_btn">
+          <button type= "button" class="form_btn-add" id="btn-add-work-experience">añadir experiencia laboral</button>
+        </div>
+      </div>
+
       <!--Formación---------------------------------------------------------->
       <div class= "form_group" id= "group_formation">
-        <div class="form_group_label">
+        <div class="form_group_label" id= "group_formation_label">
           <label class="form_label">Formación</label>
         </div>
-        <div class= "sub_form_group" id= "sub_group_formation">
-          <div class= "sub_form_group_university">
-            <label for= "university" class= "sub_form_label" name= "profile_university" id= "profile_university">
-            Universidad</label>
-            <input type="text" class="sub_form_input" name="university" id="university" placeholder="Nombre de la universidad">
-          </div>
-          <div class= "sub_form_group_degree">
-            <label for= "degree" class= "sub_form_label" name= "profile-degree" id= "profile-degree">
-            Grado
-            </label>
-            <input type="text" class="sub_form_input" name="degree" id="degree" placeholder="Ingresa tu grado">
-          </div>
-          <div class= "sub_form_group_city">
-            <label for= "city" class= "sub_form_label" name= "profile-city" id= "profile-city">
-            Ciudad
-            </label>
-            <input type="text" class="sub_form_input" name="city" id="city" placeholder="Ejemplo: Lima">
-          </div>
-          <div class= "sub_form_group_period">
-            <label for= "period" class= "sub_form_label" name= "profile-period" id= "profile-period">
-              Periodo
-            </label>
-            <div class= "sub_form_group_period_inputs">
-              <div class= "sub_form_group_period_begin">
-                <input type="text" class="sub_form_input" name="period-begin" id="period-begin" placeholder="2010">
-              </div>
-              <div class= "sub_form_group_city_end">
-                <input type="text" class="sub_form_input" name="period-begin" id="period-end" placeholder="2022">
-              </div>
-            </div>
-          </div>
-        </div>
+        <ol id= "formations">
+        </ol>
         <div class="form_group_btn">
           <button type= "button" class="form_btn-add" id="btn-add-formation">añadir formación</button>
         </div>

@@ -11,6 +11,11 @@ function deleteItem(button, cont) {
     cont= cont-1;
 }
 
+function deleteItem2(li, cont) {
+    li.remove();
+    cont= cont-1;
+}
+
 function insertItem(){
     input_habilidad= document.querySelector("#input-skill");
     const value= input_habilidad.value;
@@ -59,9 +64,10 @@ const campos= {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
+  document.querySelector('#submit').disabled= true;
   const formulario= document.getElementById('form');
   const inputs= document.querySelectorAll('#form input');
-  const text_tarea= document.querySelectorAll('#profile');
+  const text_tarea= document.querySelectorAll('#work-experience');
 
   const validarFormulario = (e) =>{
     switch(e.target.name){
@@ -83,8 +89,8 @@ document.addEventListener('DOMContentLoaded', () => {
       case "date-birth":
           validarCampo(expresiones.nacimiento, e.target, 'date-birth', 'nacimiento');
       break;
-      case "profile":
-          validarCampo(expresiones.perfil, e.target, 'profile', 'perfil');
+      case "work-experience":
+          validarCampo(expresiones.perfil, e.target, 'work-experience', 'perfil');
       break;
     }
 
@@ -149,7 +155,7 @@ document.addEventListener('DOMContentLoaded', () => {
     div_input_idioma.setAttribute("class", "form_group_input");
       const input_idioma= document.createElement("INPUT");
       setMultipleAttributes(input_idioma, {"class": "form_input", "type": "text",
-      "name": "name-language", "id": `name-language${cont_i}`, "placeholder": "Ingles"});
+      "name": `name-language${cont_i}`, "id": `name-language${cont_i}`, "placeholder": "Ingles"});
       const i_idioma= document.createElement("i");
       i_idioma.setAttribute("class", "form_validation-state fa-solid fa-circle-xmark");
     div_input_idioma.append(input_idioma, i_idioma);
@@ -208,7 +214,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const div_label_aptitud= document.createElement("div");
     div_label_aptitud.setAttribute("class", "form_group_label");
       const label_aptitud= document.createElement("label");
-      setMultipleAttributes(label_aptitud, {"for": `name-aptitude${cont_i}`, 
+      setMultipleAttributes(label_aptitud, {"for": `name-aptitude${cont_a}`, 
       "class":"form_label"});
       label_aptitud.textContent= "Aptitud:";
       const btn_delete_aptitud= document.createElement("button");
@@ -220,32 +226,32 @@ document.addEventListener('DOMContentLoaded', () => {
     div_input_aptitud.setAttribute("class", "form_group_input");
       const input_aptitud= document.createElement("INPUT");
       setMultipleAttributes(input_aptitud, {"class": "form_input", "list": 
-      `datalist-aptitudes${cont_i}`,"name": "input-aptitude", "id": 
-      `input-aptitude${cont_i}`, "placeholder": "Trabajo en equipo"});
+      `datalist-aptitudes${cont_a}`,"name":`input-aptitude${cont_a}`, "id": 
+      `input-aptitude${cont_a}`, "placeholder": "Trabajo en equipo"});
       const datalist= document.createElement("datalist");
       setMultipleAttributes(datalist, {"name": "datalist-aptitudes", 
-      "id": `datalist-aptitudes${cont_i}`});
+      "id": `datalist-aptitudes${cont_a}`});
         const option_1= document.createElement("option");
         setMultipleAttributes(option_1, {"name":"aptitude", 
-        "id": `aptitude${cont_i}`, "value": "Inteligencia emocional"});
+        "id": `aptitude${cont_a}`, "value": "Inteligencia emocional"});
         const option_2= document.createElement("option");
         setMultipleAttributes(option_2, {"name":"aptitude", 
-        "id": `aptitude${cont_i}`, "value": "Espíritu crítico"});
+        "id": `aptitude${cont_a}`, "value": "Espíritu crítico"});
         const option_3= document.createElement("option");
         setMultipleAttributes(option_3, {"name":"aptitude", 
-        "id": `aptitude${cont_i}`, "value": "Trabajo en equipo"});
+        "id": `aptitude${cont_a}`, "value": "Trabajo en equipo"});
         const option_4= document.createElement("option");
         setMultipleAttributes(option_4, {"name":"aptitude", 
-        "id": `aptitude${cont_i}`, "value": "Capacidad analítica"});
+        "id": `aptitude${cont_a}`, "value": "Capacidad analítica"});
         const option_5= document.createElement("option");
         setMultipleAttributes(option_5, {"name":"aptitude", 
-        "id": `aptitude${cont_i}`, "value": "Comunicación efectiva"});
+        "id": `aptitude${cont_a}`, "value": "Comunicación efectiva"});
         const option_6= document.createElement("option");
         setMultipleAttributes(option_6, {"name":"aptitude", 
-        "id": `aptitude${cont_i}`, "value": "Aprendizaje fluido"});
+        "id": `aptitude${cont_a}`, "value": "Aprendizaje fluido"});
         const option_7= document.createElement("option");
         setMultipleAttributes(option_7, {"name":"aptitude", 
-        "id": `aptitude${cont_i}`, "value": "Iniciativa"});
+        "id": `aptitude${cont_a}`, "value": "Iniciativa"});
 
       datalist.append(option_1, option_2, option_3, option_4, option_5, option_6,
       option_7);
@@ -317,5 +323,200 @@ document.addEventListener('DOMContentLoaded', () => {
       btn_undo_habilidad.onclick = function() {undoItem(aux_btn, p_advertencia, div_input_habilidad, div_label_habilidad);};
     }
     return false;
+  };
+});
+
+//--Experiencia Laboral------------------------------------------------------------------------------
+var cont_we= 0;
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelector('#btn-add-work-experience').onclick = () => {
+    cont_we= cont_we+1;
+    div_sub_form= document.createElement("div");
+    setMultipleAttributes(div_sub_form, {"class": "sub_form_group", "id": "sub_group_work-experience"});
+      div_head= document.createElement("div");
+      div_head.setAttribute("class", "sub_form_label_head");
+        label_head= document.createElement("label");
+        label_head.setAttribute("class", "sub_form_label");
+        label_head.textContent= "Experiencia Laboral";
+        btn_delete= document.createElement("button");
+        setMultipleAttributes(btn_delete, {"type": "button","id": "btn-delete-work-experience"});
+        btn_delete.textContent= "eliminar experiencia laboral";
+      div_head.append(label_head, btn_delete);
+
+      //---Empleo------------------------------------------------------------------
+      div_job= document.createElement("div");
+      div_job.setAttribute("class", "sub_form_group_job");
+      label_job= document.createElement("label");
+      setMultipleAttributes(label_job, {"for": `job${cont_we}`, "class": "sub_form_label",
+      "name": `work-experience_job${cont_we}`, "id": `work-experience_job${cont_we}`});
+      label_job.textContent= "Título del empleo";
+      input_job= document.createElement("INPUT");
+      setMultipleAttributes(input_job, {"type": "text", "class": "sub_form_input",
+      "name": `job${cont_we}`, "id": `job${cont_we}`,
+      "placeholder": "Título del empleo"});
+      div_job.append(label_job, input_job);
+
+      //---Empresa------------------------------------------------------------------
+      div_company= document.createElement("div");
+      div_company.setAttribute("class", "sub_form_group_company");
+      label_company= document.createElement("label");
+      setMultipleAttributes(label_company, {"for": `company${cont_we}`, "class": "sub_form_label",
+      "name": `work-experience_company${cont_we}`, "id": `work-experience_company${cont_we}`});
+      label_company.textContent= "Empresa";
+      input_company= document.createElement("INPUT");
+      setMultipleAttributes(input_company, {"type": "text", "class": "sub_form_input",
+      "name": `company${cont_we}`, "id": `company${cont_we}`,
+      "placeholder": "nombre de la empresa"});
+      div_company.append(label_company, input_company);
+
+      //---ciudad------------------------------------------------------------------
+      div_city= document.createElement("div");
+      div_city.setAttribute("class", "sub_form_group_city");
+      label_city= document.createElement("label");
+      setMultipleAttributes(label_city, {"for": `city${cont_we}`, "class": "sub_form_label",
+      "name": `work-experience_city${cont_we}`, "id": `work-experience_city${cont_we}`});
+      label_city.textContent= "Ciudad";
+      input_city= document.createElement("INPUT");
+      setMultipleAttributes(input_city, {"type": "text", "class": "sub_form_input",
+      "name": `city${cont_we}`, "id": `city${cont_we}`,
+      "placeholder": "Nombre de la ciudad"});
+      div_city.append(label_city, input_city);
+
+      //---periodo------------------------------------------------------------------
+      div_period= document.createElement("div");
+      div_period.setAttribute("class", "sub_form_group_period");
+        label_period= document.createElement("label");
+        setMultipleAttributes(label_period, {"class": "sub_form_label",
+        "name": `work-experience_period${cont_we}`, "id": `work-experience_period${cont_we}`});
+        label_period.textContent= "Periodo";
+        div_period_inputs= document.createElement("div");
+        div_period_inputs.setAttribute("class", "sub_form_group_period_inputs");
+          div_period_begin= document.createElement("div");
+          div_period_begin.setAttribute("class", "sub_form_group_period_begin");
+          input_period_begin= document.createElement("INPUT");
+          setMultipleAttributes(input_period_begin, {"type": "text", "class": "sub_form_input",
+          "name": `period-begin${cont_we}`, "id": `period-begin${cont_we}`,
+          "placeholder": "2010"});
+          div_period_begin.append(input_period_begin);
+          div_period_end= document.createElement("div");
+          div_period_end.setAttribute("class", "sub_form_group_period_end");
+          input_period_end= document.createElement("INPUT");
+          setMultipleAttributes(input_period_end, {"type": "text", "class": "sub_form_input",
+          "name": `period-end${cont_we}`, "id": `period-end${cont_we}`,
+          "placeholder": "2022"});
+          div_period_end.append(input_period_end);
+        div_period_inputs.append(div_period_begin, div_period_end);
+      div_period.append(label_period, div_period_inputs);
+
+      //----content--------------------------------------------------------
+      div_content= document.createElement("div");
+      div_content.setAttribute("class", "sub_form_group_content");
+      label_content= document.createElement("label");
+      setMultipleAttributes(label_content, {"for": `experience${cont_we}`,
+       "class": "sub_form_label","name": `work-experience_content${cont_we}`, "id": `work-experience_content${cont_we}`});
+      label_content.textContent= "Descripción";
+      input_content= document.createElement("textarea");
+      setMultipleAttributes(input_content, {"class": "form_input_content",
+      "name": `content${cont_we}`, "id": `content${cont_we}`,
+      "placeholder": "Ingresa tu experiencia e hitos aquí. Por ejemplo: Era responsable de hacer los informes mensuales."});
+      div_content.append(label_content, input_content);
+
+    div_sub_form.append(div_head, div_job, div_company, div_city, div_period, div_content);
+    const li= document.createElement('li');
+    li.append(div_sub_form);
+    document.querySelector("#work-experiences").append(li);
+    btn_delete.onclick = function() {deleteItem2(li, cont_we);};
+    return false;
+  };
+});
+
+//--Formation------------------------------------------------------------------------------
+var cont_f= 0;
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelector('#btn-add-formation').onclick = () => {
+    cont_f= cont_f+1;
+    div_sub_form= document.createElement("div");
+    setMultipleAttributes(div_sub_form, {"class": "sub_form_group", "id": `sub_group_formation${cont_f}`});
+      div_head= document.createElement("div");
+      div_head.setAttribute("class", "sub_form_label_head");
+        label_head= document.createElement("label");
+        label_head.setAttribute("class", "sub_form_label");
+        label_head.textContent= "Formación";
+        btn_delete= document.createElement("button");
+        setMultipleAttributes(btn_delete, {"type": "button","id": "btn-delete-formation"});
+        btn_delete.textContent= "eliminar formación";
+      div_head.append(label_head, btn_delete);
+
+      //---universidad------------------------------------------------------------------
+      div_university= document.createElement("div");
+      div_university.setAttribute("class", "sub_form_group_university");
+      label_university= document.createElement("label");
+      setMultipleAttributes(label_university, {"for": "university", "class": "sub_form_label",
+      "name": `profile_university${cont_f}`, "id": `profile_university${cont_f}`});
+      label_university.textContent= "Universidad";
+      input_university= document.createElement("INPUT");
+      setMultipleAttributes(input_university, {"type": "text", "class": "sub_form_input",
+      "name": `university${cont_f}`, "id": `university${cont_f}`,
+      "placeholder": "Nombre de la universidad"});
+      div_university.append(label_university, input_university);
+
+      //---grado------------------------------------------------------------------
+      div_degree= document.createElement("div");
+      div_degree.setAttribute("class", "sub_form_group_degree");
+      label_degree= document.createElement("label");
+      setMultipleAttributes(label_degree, {"for": "degree", "class": "sub_form_label",
+      "name": `profile_degree${cont_f}`, "id": `profile_degree${cont_f}`});
+      label_degree.textContent= "Grado";
+      input_degree= document.createElement("INPUT");
+      setMultipleAttributes(input_degree, {"type": "text", "class": "sub_form_input",
+      "name": `degree${cont_f}`, "id": `degree${cont_f}`,
+      "placeholder": "Ingresa tu grado"});
+      div_degree.append(label_degree, input_degree);
+
+      //---ciudad------------------------------------------------------------------
+      div_city= document.createElement("div");
+      div_city.setAttribute("class", "sub_form_group_city");
+      label_city= document.createElement("label");
+      setMultipleAttributes(label_city, {"for": "city", "class": "sub_form_label",
+      "name": `profile_city${cont_f}`, "id": `profile_city${cont_f}`});
+      label_city.textContent= "Ciudad";
+      input_city= document.createElement("INPUT");
+      setMultipleAttributes(input_city, {"type": "text", "class": "sub_form_input",
+      "name": `fcity${cont_f}`, "id": `fcity${cont_f}`,
+      "placeholder": "Nombre de la ciudad"});
+      div_city.append(label_city, input_city);
+
+      //---periodo------------------------------------------------------------------
+      div_period= document.createElement("div");
+      div_period.setAttribute("class", "sub_form_group_period");
+        label_period= document.createElement("label");
+        setMultipleAttributes(label_period, {"for": "period", "class": "sub_form_label",
+        "name": `profile_period${cont_f}`, "id": `profile_period${cont_f}`});
+        label_period.textContent= "Periodo";
+        div_period_inputs= document.createElement("div");
+        div_period_inputs.setAttribute("class", "sub_form_group_period_inputs");
+          div_period_begin= document.createElement("div");
+          div_period_begin.setAttribute("class", "sub_form_group_period_begin");
+          input_period_begin= document.createElement("INPUT");
+          setMultipleAttributes(input_period_begin, {"type": "text", "class": "sub_form_input",
+          "name": `fperiod-begin${cont_f}`, "id": `fperiod-begin${cont_f}`,
+          "placeholder": "2010"});
+          div_period_begin.append(input_period_begin);
+          div_period_end= document.createElement("div");
+          div_period_end.setAttribute("class", "sub_form_group_period_end");
+          input_period_end= document.createElement("INPUT");
+          setMultipleAttributes(input_period_end, {"type": "text", "class": "sub_form_input",
+          "name": `fperiod-end${cont_f}`, "id": `fperiod-end${cont_f}`,
+          "placeholder": "2022"});
+          div_period_end.append(input_period_end);
+        div_period_inputs.append(div_period_begin, div_period_end);
+      div_period.append(label_period, div_period_inputs);
+
+    div_sub_form.append(div_head, div_university, div_degree, div_city, div_period);
+    const li= document.createElement('li');
+    li.append(div_sub_form);
+    document.querySelector("#formations").append(li);
+    btn_delete.onclick = function() {deleteItem2(li, cont_f);};
+    return false;    
   };
 });

@@ -36,14 +36,40 @@
         </p>
       
         <h3 class= "card-tittle"><b>IDIOMAS</b></h3>
-        <p>Español: Nativo</p>
-        <p>Inglés: {{nivel_ingles}}</p>
-        <p>Francés: Intermedio (B2)</p>
+          {% if name_language1%}
+            <p>{{name_language1}}: {{value_language1}}</p>
+          {% endif %}
+          {% if name_language2 %}
+            <p>{{name_language2}}: {{value_language2}}</p>
+          {% endif %}
+          {% if name_language3 %}
+            <p>{{name_language3}}: {{value_language3}}</p>
+          {% endif %}
+          {% if name_language4 %}
+            <p>{{name_language4}}: {{value_language4}}</p>
+          {% endif %}
+          {% if name_language5 %}
+            <p>{{name_language5}}: {{value_language5}}</p>
+          {% endif %}
 
         <h3 class= "card-tittle"><b>APTITUDES</b></h3>
-        <ul>
-          <li>{{aptitudes}}</li>
-        </ul>
+          <ul>
+            {% if aptitude1%}
+              <li>{{aptitude1}}</li>
+            {% endif %}
+            {% if aptitude2%}
+              <li>{{aptitude2}}</li>
+            {% endif %}
+            {% if aptitude3%}
+              <li>{{aptitude3}}</li>
+            {% endif %}
+            {% if aptitude4%}
+              <li>{{aptitude4}}</li>
+            {% endif %}
+            {% if aptitude5%}
+              <li>{{aptitude5}}</li>
+            {% endif %}
+          </ul>
 
         <h3 class= "card-tittle"><b>HABILIDADES</b></h3>
         <ul>
@@ -59,6 +85,24 @@
           {% if hab4 %}
             <li>{{hab4}}</li>
           {% endif %}
+          {% if hab5 %}
+            <li>{{hab5}}</li>
+          {% endif %}
+          {% if hab6 %}
+            <li>{{hab6}}</li>
+          {% endif %}
+          {% if hab7 %}
+            <li>{{hab7}}</li>
+          {% endif %}
+          {% if hab8 %}
+            <li>{{hab8}}</li>
+          {% endif %}
+          {% if hab9 %}
+            <li>{{hab9}}</li>
+          {% endif %}
+          {% if hab10 %}
+            <li>{{hab10}}</li>
+          {% endif %}
         </ul>
 
       </div>
@@ -66,51 +110,57 @@
       <div class= "col-2">
         <h3 class= "card-tittle"><b>PERFIL</b></h3>
         <p>{{perfil}}</p>
+
         <h3 class= "card-tittle"><b>EXPERIENCIA LABORAL</b></h3>
+          {% if empleo1 %}
+            <h4 class="card-subtittle">{{empleo1}}</h4>
+            <h5><b>{{eciudad1}}, </b><div class="txtGray">{{empresa1}} | {{eaño_inicio1}}-{{eaño_fin1}}</div></h5>
+            {{descripcion1}}
+          {% endif %}
 
-        <h4 class="card-subtittle">Trabajador Social</h4>
-        <h5><b>México DF, </b><div class="txtGray">| 2022-actualmente</div></h5>
-        <ul>
-          <li>Coordinador y mediador entre los equipos de ayuda 
-              psicológica a jóvenes y niños en exclusión social</li>
-          <li>Velar por la salud mental del equipo y de miembros
-              involucrados en proyectos</li>
-          <li>Mepeo de necesidades estratégicas y lógicas para 
-              las diferentes áreas.</li>
-          <li>Monitor de ejercicios físicos para adolescentes.</li>
-          <li>Programar diferentes actividades extracurriculares
-              en los involucrados.</li>
-        </ul>
+          {% if empleo2 %}
+            <h4 class="card-subtittle">{{empleo1}}</h4>
+            <h5><b>{{eciudad2}}, </b><div class="txtGray">{{empresa2}} | {{eaño_inicio2}}-{{eaño_fin2}}</div></h5>
+            {{descripcion2}}
+          {% endif %}
 
-        <h4 class="card-subtittle">Trabajador Social</h4>
-        <h5><b>México DF, </b><div class="txtGray">| 2020-2022</div></h5>
-        <ul>
-          <li>Funciones para seguimientos de casos para jóvenes con
-              problemas de adicciones</li>
-          <li>Capacitaciones e integración vinculadas a medidas pre
-              ventivas</li>
-          <li>Recopilación de evidencias para auditorías y programas
-              sociales.</li>
-        </ul>
+          {% if empleo3 %}
+            <h4 class="card-subtittle">{{empleo3}}</h4>
+            <h5><b>{{eciudad3}}, </b><div class="txtGray">{{empresa3}} | {{eaño_inicio3}}-{{eaño_fin3}}</div></h5>
+            {{descripcion3}}
+          {% endif %}
 
-        <h4 class="card-subtittle">Trabajador Social(Prácticas)</h4>
-        <h5><b>Zaragoza, España</b><div class="txtGray">| 2019-2020</h5>
-        <ul>
-          <li>Profesor de lengua española e inglesa para jovenes mig
-              rantes</li>
-          <li>Monitor de actividades ecológicas con adolescentes</li>
-          <li>Coordinador de áreas deportivas</li>
-        </ul>
-
+          {% if empleo4 %}
+            <h4 class="card-subtittle">{{empleo4}}</h4>
+            <h5><b>{{eciudad4}}, </b><div class="txtGray">{{empresa4}} | {{eño_inicio4}}-{{eaño_fin4}}</div></h5>
+            {{descripcion4}}
+          {% endif %}
+          {% if empleo5 %}
+            <h4 class="card-subtittle">{{empleo5}}</h4>
+            <h5><b>{{eciudad5}}, </b><div class="txtGray">{{empresa5}} | {{eaño_inicio5}}-{{eaño_fin5}}</div></h5>
+            {{descripcion5}}
+          {% endif %}
+        
         <h3 class= "card-tittle"><b>FORMACION</b></h3>
-        <h4 class="card-subtittle"><b>Grado de Trabajo Social</b></h4>
-        <h5>ESMA, Madrid <div class="txtGray">| 2012-2015</div></h5>
-        <h4 class="card-subtittle"><b>Licenciatura Profesional</b></h4>
-        <h5>Universidad de la Frontera, México DF<div class="txtGray">
-        | 2011-2012</div></h5>
-      </div>
+          {% if universidad1 %}
+            <div>
+            <h4 class="card-subtittle">{{grado1}}</h4>
+            <h5><b>{{universidad1}}, </b><div class="txtGray">{{fciudad1}} | {{faño_inicio1}}-{{faño_fin1}}</div></h5>
+            </div>
+          {% endif %}
+          {% if universidad2 %}
+            <div>
+            <h4 class="card-subtittle">{{grado2}}</h4>
+            <h5><b>{{universidad2}}, </b><div class="txtGray">{{fciudad2}} | {{faño_inicio2}}-{{faño_fin2}}</div></h5>
+            </div>
+          {% endif %}
+          {% if universidad3 %}
+            <div>
+            <h4 class="card-subtittle">{{grado3}}</h4>
+            <h5><b>{{universidad3}}, </b><div class="txtGray">{{fciudad3}} | {{faño_inicio3}}-{{faño_fin3}}</div></h5>
+            </div>
+          {% endif %}
      
-      
     </div>
   </div>
 </body>

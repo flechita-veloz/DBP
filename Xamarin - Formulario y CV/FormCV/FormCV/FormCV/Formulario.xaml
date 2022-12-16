@@ -1,0 +1,263 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FormCV.Formulario" Background="#E5E5E5">
+    <ScrollView VerticalOptions="FillAndExpand">
+        <Grid Margin="10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40"></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="500"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Label Grid.Row="0" Grid.ColumnSpan="2" 
+                   Text="Formulario"
+                   FontAttributes="Bold"
+                   FontSize="20"
+                   HorizontalOptions="Center">
+            </Label>
+            <StackLayout Grid.Row="1" Grid.Column="0">
+                <!--Nombres-->
+                <Label Text="Nombres:"  FontAttributes="Bold"></Label>
+                <Entry Placeholder="Abimael Eduardo"></Entry>
+                <!-- Nacimiento-->
+                <Label Text="Fecha de Nacimiento:" FontAttributes="Bold"></Label>
+                <DatePicker></DatePicker>
+                <!-- Teléfono-->
+                <Label Text="Teléfono:"  FontAttributes="Bold"></Label>
+                <Entry Placeholder="946020200"  Keyboard="Numeric"></Entry>
+                <!-- Nacionalidad-->
+                <Label Text="Nacionalidad:"  FontAttributes="Bold"></Label>
+                <Picker>
+                    <Picker.Items>
+                        <x:String>Argentina</x:String>
+                        <x:String>Brazil</x:String>
+                        <x:String>Perú</x:String>
+                        <x:String>Bolivia</x:String>
+                        <x:String>Colombia</x:String>
+                        <x:String>Chile</x:String>
+                    </Picker.Items>
+                </Picker>
+                <!-- Lenguajes de Programación-->
+                <Label Text="Lenguajes de Programación:" FontAttributes="Bold"></Label>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="20"></RowDefinition>
+                        <RowDefinition Height="20"></RowDefinition>
+                        <RowDefinition Height="20"></RowDefinition>
+                        <RowDefinition Height="20"></RowDefinition>
+                        <RowDefinition Height="20"></RowDefinition>
+                        <RowDefinition Height="20"></RowDefinition>
+                        <RowDefinition Height="20"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="30"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <CheckBox Grid.Row="0" Grid.Column="0"></CheckBox>
+                    <Label Text="C/C++"
+                           VerticalOptions="Center"
+                           FontAttributes="Bold" 
+                           Grid.Row="0" 
+                           Grid.Column="1">
+                    </Label>
+                    <CheckBox Grid.Row="1" Grid.Column="0"></CheckBox>
+                    <Label Text="JavaScript"
+                           VerticalOptions="Center"
+                           FontAttributes="Bold" 
+                           Grid.Row="1" 
+                           Grid.Column="1">
+                    </Label>
+                    <CheckBox Grid.Row="2" Grid.Column="0"></CheckBox>
+                    <Label Text="Java"
+                           VerticalOptions="Center"
+                           FontAttributes="Bold" 
+                           Grid.Row="2" 
+                           Grid.Column="1">
+                    </Label>
+                    <CheckBox Grid.Row="3" Grid.Column="0"></CheckBox>
+                    <Label Text="C#"
+                           VerticalOptions="Center"
+                           FontAttributes="Bold" 
+                           Grid.Row="3" 
+                           Grid.Column="1">
+                    </Label>
+                    <CheckBox Grid.Row="4" Grid.Column="0"></CheckBox>
+                    <Label Text="Python"
+                           VerticalOptions="Center"
+                           FontAttributes="Bold" 
+                           Grid.Row="4" 
+                           Grid.Column="1">
+                    </Label>
+                    <CheckBox Grid.Row="5" Grid.Column="0"></CheckBox>
+                    <Label Text="PHP"
+                           VerticalOptions="Center"
+                           FontAttributes="Bold" 
+                           Grid.Row="5" 
+                           Grid.Column="1">
+                    </Label>
+                    <CheckBox Grid.Row="6" Grid.Column="0"></CheckBox>
+                    <Label Text="R"
+                           VerticalOptions="Center"
+                           FontAttributes="Bold" 
+                           Grid.Row="6" 
+                           Grid.Column="1">
+                    </Label>
+                </Grid>
+                <!--Habilidades-->
+                <Label Text="Habilidades:" FontAttributes="Bold"></Label>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"></RowDefinition>
+                        <RowDefinition Height="auto"></RowDefinition>
+                        <RowDefinition Height="auto"></RowDefinition>
+                        <RowDefinition Height="auto"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="30"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <CheckBox Grid.Row="0" Grid.Column="0"></CheckBox>
+                    <Label Text="Ciberseguridad"
+                           VerticalOptions="Center"
+                           FontAttributes="Bold" 
+                           Grid.Row="0" 
+                           Grid.Column="1">
+                    </Label>
+                    <CheckBox Grid.Row="1" Grid.Column="0"></CheckBox>
+                    <Label Text="Diseño de bases de datos"
+                           VerticalOptions="Center"
+                           FontAttributes="Bold" 
+                           Grid.Row="1" 
+                           Grid.Column="1">
+                    </Label>
+                    <CheckBox Grid.Row="2" Grid.Column="0"></CheckBox>
+                    <Label Text="Debugging"
+                           VerticalOptions="Center"
+                           FontAttributes="Bold" 
+                           Grid.Row="2" 
+                           Grid.Column="1">
+                    </Label>
+                    <CheckBox Grid.Row="3" Grid.Column="0"></CheckBox>
+                    <Label Text="Programación back-end"
+                           VerticalOptions="Center"
+                           FontAttributes="Bold" 
+                           Grid.Row="3" 
+                           Grid.Column="1">
+                    </Label>
+                </Grid>
+            </StackLayout>
+            <StackLayout Grid.Row="1" Grid.Column="1">
+                <!-- Apellidos-->
+                <Label Text="Apellidos:"  FontAttributes="Bold"></Label>
+                <Entry Placeholder="Ruiz Trelles"></Entry>
+                <!-- Ocuapación-->
+                <Label Text="Ocupación:"  FontAttributes="Bold"></Label>
+                <Entry Placeholder="Ingeniero de Software"></Entry>
+                <!-- Email-->
+                <Label Text="Email:"  FontAttributes="Bold"></Label>
+                <Entry Placeholder="correo@correo.com"></Entry>
+                <!--Idioma-->
+                <Label Text="Idiomas"  FontAttributes="Bold"></Label>
+                <StackLayout>
+                    <Label Text="Idioma:"></Label>
+                    <Entry Placeholder="Inglés"></Entry>
+                    <Label Text="Nivel:"></Label>
+                    <Picker>
+                        <Picker.Items>
+                            <x:String>Básico</x:String>
+                            <x:String>Intermedio</x:String>
+                            <x:String>Avanzado</x:String>
+                            <x:String>Fluido</x:String>
+                        </Picker.Items>
+                    </Picker>
+                </StackLayout>
+                <!-- Aptitudes-->
+                <Label Text="Aptitudes"  FontAttributes="Bold"></Label>
+                <StackLayout>
+                    <Label Text="Aptitud:"></Label>
+                    <Picker>
+                        <Picker.Items>
+                            <x:String>Inteligencia emocional</x:String>
+                            <x:String>Espíritu crítico</x:String>
+                            <x:String>Trabajo en equipo</x:String>
+                            <x:String>Capacidad analítica</x:String>
+                            <x:String>Comunicación efectiva</x:String>
+                            <x:String>Aprendizaje Fluido</x:String>
+                            <x:String>Iniciativa</x:String>
+                        </Picker.Items>
+                    </Picker>
+                </StackLayout>
+            </StackLayout>
+            <!--Perfil-->
+            <Label Text="Perfil" Margin="0,10,0,0" FontAttributes="Bold" Grid.Row="2" Grid.ColumnSpan="2"></Label>
+            <Editor Grid.Row="3" 
+                    Grid.ColumnSpan="2" 
+                    Placeholder="Trabajador Social con 4 años de experiencia en proyectos colectivos. Mi objetivo es lograr que los jóvenes obtengan acceso a la educación superior mediante logros deportivos."
+                    Margin="20,0"
+                    AutoSize="TextChanges">
+            </Editor>
+            <!--Experiencia Laboral-->
+            <Label Text="Experiencia Laboral" Margin="0,10"  FontAttributes="Bold" Grid.Row="4" Grid.ColumnSpan="2"></Label>
+            <Grid Grid.Row="5" Grid.ColumnSpan="2">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"></RowDefinition>
+                    <RowDefinition Height="auto"></RowDefinition>
+                    <RowDefinition Height="auto"></RowDefinition>
+                    <RowDefinition Height="auto"></RowDefinition>
+                    <RowDefinition Height="auto"></RowDefinition>
+                    <RowDefinition Height="auto"></RowDefinition>
+                    <RowDefinition Height="auto"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Label Text="Experiencia Laboral:" Grid.Row="0" Grid.ColumnSpan="2"></Label>
+                <Label Text="Título de Empleo" Grid.Row="1" Grid.Column="0"></Label>
+                <Entry Placeholder="Título de Empleo" Grid.Row="2" Grid.Column="0"></Entry>
+                <Label Text="Empresa" Grid.Row="1" Grid.Column="1"></Label>
+                <Entry Placeholder="Nombre de la empresa" Grid.Row="2" Grid.Column="1"></Entry>
+                <Label Text="Ciudad" Grid.Row="3" Grid.Column="0"></Label>
+                <Entry Placeholder="Nombre de la ciudad" Grid.Row="4" Grid.Column="0"></Entry>
+                <Label Text="Periodo" Grid.Row="3" Grid.Column="1"></Label>
+                <Grid Grid.Row="4" Grid.Column="1">
+                    <Entry Grid.Row="0" Grid.Column="0" Placeholder="2010"></Entry>
+                    <Entry Grid.Row="0" Grid.Column="1" Placeholder="2014"></Entry>
+                </Grid>
+                <Label Text="Descripción" Grid.Row="5" Grid.ColumnSpan="2"></Label>
+                <Editor Grid.Row="6" 
+                    Grid.ColumnSpan="2" 
+                    Placeholder="Ingresa tu experiencia e hitos aquí. Por ejemplo: Era responsable de hacer los informes mensuales.."
+                    Margin="20,0"
+                    AutoSize="TextChanges">
+                </Editor>
+            </Grid>
+            <!--Formación-->
+            <Label Text="Formación:"  Margin="0,10" FontAttributes="Bold" Grid.Row="6" Grid.ColumnSpan="2"></Label>
+            <Grid Grid.Row="7" Grid.ColumnSpan="2">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"></RowDefinition>
+                    <RowDefinition Height="auto"></RowDefinition>
+                    <RowDefinition Height="auto"></RowDefinition>
+                    <RowDefinition Height="auto"></RowDefinition>
+                    <RowDefinition Height="auto"></RowDefinition>
+                    <RowDefinition Height="auto"></RowDefinition>
+                    <RowDefinition Height="auto"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Label Text="Formación:" Grid.Row="0" Grid.ColumnSpan="2"></Label>
+                <Label Text="Universidad" Grid.Row="1" Grid.Column="0"></Label>
+                <Entry Placeholder="Nombre de la universidad" Grid.Row="2" Grid.Column="0"></Entry>
+                <Label Text="Grado" Grid.Row="1" Grid.Column="1"></Label>
+                <Entry Placeholder="Ingresa tu grado" Grid.Row="2" Grid.Column="1"></Entry>
+                <Label Text="Ciudad" Grid.Row="3" Grid.Column="0"></Label>
+                <Entry Placeholder="Nombre de la ciudad" Grid.Row="4" Grid.Column="0"></Entry>
+                <Label Text="Periodo" Grid.Row="3" Grid.Column="1"></Label>
+                <Grid Grid.Row="4" Grid.Column="1">
+                    <Entry Grid.Row="0" Grid.Column="0" Placeholder="2010"></Entry>
+                    <Entry Grid.Row="0" Grid.Column="1" Placeholder="2014"></Entry>
+                </Grid>
+            </Grid>
+            <StackLayout Grid.Row="8" Grid.ColumnSpan="2"></StackLayout>
+        </Grid>
+    </ScrollView>
+</ContentPage>

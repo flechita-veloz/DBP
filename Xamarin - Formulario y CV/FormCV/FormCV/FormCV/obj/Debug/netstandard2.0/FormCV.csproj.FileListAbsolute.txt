@@ -1,0 +1,16 @@
+C:\Users\flechitaveloz\source\repos\FormCV\FormCV\FormCV\bin\Debug\netstandard2.0\FormCV.deps.json
+C:\Users\flechitaveloz\source\repos\FormCV\FormCV\FormCV\bin\Debug\netstandard2.0\FormCV.dll
+C:\Users\flechitaveloz\source\repos\FormCV\FormCV\FormCV\bin\Debug\netstandard2.0\FormCV.pdb
+C:\Users\flechitaveloz\source\repos\FormCV\FormCV\FormCV\obj\Debug\netstandard2.0\FormCV.csproj.AssemblyReference.cache
+C:\Users\flechitaveloz\source\repos\FormCV\FormCV\FormCV\obj\Debug\netstandard2.0\FormCV.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\flechitaveloz\source\repos\FormCV\FormCV\FormCV\obj\Debug\netstandard2.0\App.xaml.g.cs
+C:\Users\flechitaveloz\source\repos\FormCV\FormCV\FormCV\obj\Debug\netstandard2.0\MainPage.xaml.g.cs
+C:\Users\flechitaveloz\source\repos\FormCV\FormCV\FormCV\obj\Debug\netstandard2.0\FormCV.AssemblyInfoInputs.cache
+C:\Users\flechitaveloz\source\repos\FormCV\FormCV\FormCV\obj\Debug\netstandard2.0\FormCV.AssemblyInfo.cs
+C:\Users\flechitaveloz\source\repos\FormCV\FormCV\FormCV\obj\Debug\netstandard2.0\FormCV.csproj.CoreCompileInputs.cache
+C:\Users\flechitaveloz\source\repos\FormCV\FormCV\FormCV\obj\Debug\netstandard2.0\XamlC.stamp
+C:\Users\flechitaveloz\source\repos\FormCV\FormCV\FormCV\obj\Debug\netstandard2.0\FormCV.dll
+C:\Users\flechitaveloz\source\repos\FormCV\FormCV\FormCV\obj\Debug\netstandard2.0\refint\FormCV.dll
+C:\Users\flechitaveloz\source\repos\FormCV\FormCV\FormCV\obj\Debug\netstandard2.0\FormCV.pdb
+C:\Users\flechitaveloz\source\repos\FormCV\FormCV\FormCV\obj\Debug\netstandard2.0\ref\FormCV.dll
+C:\Users\flechitaveloz\source\repos\FormCV\FormCV\FormCV\obj\Debug\netstandard2.0\Formulario.xaml.g.cs
